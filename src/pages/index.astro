@@ -10,6 +10,7 @@ import LatestArticles from '../components/latestarticles.astro'
 import CTA from '../components/cta.astro'
 import { DefaultImage } from '../config'
 import { Image } from 'astro:assets'
+import GMap from '../components/gmap.astro'
 
 const frontmatter: Frontmatter = {
   title: SiteMetadata.title,
@@ -25,8 +26,9 @@ const latestPosts = posts.sort((a, b) => +b.data.publishDate - +a.data.publishDa
 ---
 
 <Base frontmatter={frontmatter}>
-  <Image class="w-full" src={DefaultImage} alt="banner" />
+  <Image class='w-full' src={DefaultImage} alt='banner' />
   <Hero />
+  <GMap search="Authentic KL Flavors" />
   <CTA />
   <div class='bg-white p-24 dark:bg-black md:p-12'></div>
 </Base>

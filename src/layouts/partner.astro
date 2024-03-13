@@ -1,0 +1,75 @@
+---
+import type { Frontmatter } from '../config'
+import { SiteMetadata } from '../config'
+import type { CollectionEntry } from 'astro:content'
+import { Image } from 'astro:assets'
+import Base from './base.astro'
+import BlogHero from '../components/bloghero.astro'
+import NextPrev from '../components/nextprev.astro'
+import GMap from '../components/gmap.astro'
+
+export interface Props {
+  partner: CollectionEntry<'partner'>
+  prev?: CollectionEntry<'partner'>
+  next?: CollectionEntry<'partner'>
+}
+
+const { partner, prev, next } = Astro.props
+
+const frontmatter: Frontmatter = {
+  title: partner.data.title,
+  description: partner.data.description,
+  coverImage: partner.data.image,
+  publishDate: SiteMetadata.buildTime
+}
+---
+
+<Base frontmatter={frontmatter}>
+  <main class='dark:bg-black'>
+    <article class='post'>
+      <header>
+        <BlogHero frontmatter={frontmatter} />
+      </header>
+      <section class='bg-white'>
+        <div
+          class='mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 px-4 py-8 sm:px-6 lg:max-w-7xl lg:grid-cols-2 lg:px-8'
+        >
+          <div>
+            <Image src={partner.data.image} alt={partner.data.title} class="w-full" />
+            <h2 class='text-3xl font-bold tracking-tight text-gray-900 sm:text-3xl'>
+              {partner.data.title}
+            </h2>
+            <p class='text-gray-500'>{partner.data.description}</p>
+            
+            <dl
+            class='mt-4 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8'
+            >
+            <div class='border-t border-gray-200 pt-4'>
+              <dt class='font-medium text-gray-900'>Cuisine</dt>
+              <dd class='mt-2 text-sm text-gray-500'>{partner.data.cuisine}</dd>
+            </div>
+            <div class='border-t border-gray-200 pt-4'>
+              <dt class='font-medium text-gray-900'>{partner.data.discount_pct}% Discount</dt>
+              <dd class='mt-2 text-sm text-gray-500'>
+                {partner.data.discount_text}
+              </dd>
+            </div>
+          </dl>
+          </div>
+          <div>
+            <GMap search={partner.data.title} />
+            <div class="mt-4 prose prose-orange mx-auto max-w-screen-lg dark:prose-invert text-gray-500" >
+              <slot />
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+  <NextPrev
+    slot='before-footer'
+    base={import.meta.env.BASE_URL + 'news/'}
+    prev={prev}
+    next={next}
+  />
+</Base>

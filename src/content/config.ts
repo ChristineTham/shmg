@@ -6,13 +6,14 @@ const partner = defineCollection({
     z.object({
       title: z.string(),
       description: z.string().optional(),
+      cuisine: z.string().optional(),
       image: image().optional(),
       categories: z.array(reference('category')).optional(),
       tags: z.array(z.string()).optional(),
       halal: z.boolean().default(true),
-      discount: z.number().optional(),
-      dconditions: z.string().optional(),
-      comment: z.string().optional(),
+      discount_pct: z.number().optional(),
+      discount_text: z.string().optional(),
+      comment: z.string().optional()
     })
 })
 

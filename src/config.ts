@@ -10,7 +10,8 @@ export interface TagType {
 
 export const SiteMetadata = {
   title: 'Sydney Hills Makan Group',
-  description: 'Indulge in the world of flavors with SHMG – where culinary delights meet community spirit! 🍲 "Makan" meaning "Eat" in Malaysian & Singaporean Malay and Indonesian language.',
+  description:
+    'Indulge in the world of flavors with SHMG – where culinary delights meet community spirit! 🍲 "Makan" meaning "Eat" in Malaysian & Singaporean Malay and Indonesian language.',
   author: {
     name: 'Chris Tham',
     twitter: '@chris1tham',
@@ -40,7 +41,7 @@ export const NavigationLinks = [
   { name: 'About', href: 'about' },
   { name: 'Contact', href: 'contact' },
   { name: 'News', href: 'news' },
-  { name: 'Partners', href: 'partners' }
+  { name: 'Partners', href: 'partner' }
 ]
 
 export const PAGE_SIZE = 6

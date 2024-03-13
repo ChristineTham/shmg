@@ -4,16 +4,15 @@ import lunr from 'lunr'
 const posts = await getCollection('news', (p) => {
   return !p.data.draft
 })
-const documents = posts
-  .map((post) => ({
-    url: import.meta.env.BASE_URL + 'news/' + post.slug,
-    title: post.data.title,
-    description: post.data.description,
-    author: post.data.author,
-    categories: post.data.categories && post.data.categories.join(' '),
-    tags: post.data.tags && post.data.tags.join(' '),
-    content: post.body
-  }))
+const documents = posts.map((post) => ({
+  url: import.meta.env.BASE_URL + 'news/' + post.slug,
+  title: post.data.title,
+  description: post.data.description,
+  author: post.data.author,
+  categories: post.data.categories && post.data.categories.join(' '),
+  tags: post.data.tags && post.data.tags.join(' '),
+  content: post.body
+}))
 
 const idx = lunr(function () {
   this.ref('url')

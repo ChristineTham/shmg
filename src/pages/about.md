@@ -1,9 +1,11 @@
 ---
 layout: ../layouts/page.astro
-title: "🍜 Welcome to Sydney Hills Makan (Foodie) Group 🌏"
+title: '🍜 Welcome to Sydney Hills Makan (Foodie) Group 🌏'
 description: You do not have to leave in the Hills to join. It is open to everyone, and everyone is most welcome.
 publishDate: '2023-06-13T00:00:00.000Z'
 ---
+
+<div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=authentic%20kl%20flavours&t=&z=19&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div>
 
 Indulge in the world of flavors with SHMG – where culinary delights meet community spirit! 🍲 "Makan" meaning "Eat" in Malaysian & Singaporean Malay and Indonesian language.
 

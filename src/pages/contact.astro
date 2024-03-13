@@ -4,15 +4,13 @@ import Base from '../layouts/base.astro'
 import Map from '../components/map.astro'
 import PageHero from '../components/pagehero.astro'
 import { SiteMetadata } from '../config'
-import coverSVG from '../assets/svg/undraw/undraw_contact_us.svg'
-import socialImage from '../assets/undraw/undraw_contact_us.png'
 import { getCollection } from 'astro:content'
+import { DefaultImage } from '../config'
 
 const frontmatter = {
   title: 'Contact',
   description: 'Our presence is real and digital. Contact us through the following ways.',
-  coverSVG: coverSVG,
-  socialImage: socialImage,
+  coverImage: DefaultImage,
   publishDate: SiteMetadata.buildTime
 }
 
@@ -24,8 +22,7 @@ const social = await getCollection('social')
     <PageHero
       title={frontmatter.title}
       description={frontmatter.description}
-      coverSVG={coverSVG}
-      socialImage={socialImage}
+      coverImage={DefaultImage}
     />
   </header>
   <main>

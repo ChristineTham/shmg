@@ -11,7 +11,7 @@ import type {
   WebSite,
   WithContext
 } from 'schema-dts'
-import { SiteMetadata, DefaultImage, LogoImage } from '../config'
+import { SiteMetadata, DefaultImage, Logo } from '../config'
 
 export interface Props {
   frontmatter: Frontmatter
@@ -28,7 +28,7 @@ const image = await getImage({
   width: 1200,
   format: 'jpg'
 })
-const logo = LogoImage
+const logo = Logo
 const publishDate = new Date(frontmatter.publishDate)
 
 const openGraph = {

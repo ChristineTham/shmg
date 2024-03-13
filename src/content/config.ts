@@ -1,8 +1,23 @@
 // 1. Import your utilities and schemas
 import { z, defineCollection, reference } from 'astro:content'
 
+const partner = defineCollection({
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string().optional(),
+      image: image().optional(),
+      categories: z.array(reference('category')).optional(),
+      tags: z.array(z.string()).optional(),
+      halal: z.boolean().default(true),
+      discount: z.number().optional(),
+      dconditions: z.string().optional(),
+      comment: z.string().optional(),
+    })
+})
+
 // 2. Define your collections
-const blogCollection = defineCollection({
+const news = defineCollection({
   schema: ({ image }) =>
     z.object({
       draft: z.boolean().optional(),
@@ -22,20 +37,7 @@ const blogCollection = defineCollection({
     })
 })
 
-const docCollection = defineCollection({
-  schema: ({ image }) =>
-    z.object({
-      draft: z.boolean().optional(),
-      section: z.string(),
-      weight: z.number().default(0),
-      title: z.string(),
-      description: z.string(),
-      images: z.array(image()).optional(),
-      gallery: z.string().optional()
-    })
-})
-
-const categoryCollection = defineCollection({
+const category = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
@@ -45,7 +47,7 @@ const categoryCollection = defineCollection({
     })
 })
 
-const authorCollection = defineCollection({
+const author = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
@@ -55,7 +57,7 @@ const authorCollection = defineCollection({
     })
 })
 
-const socialCollection = defineCollection({
+const social = defineCollection({
   type: 'data',
   schema: z.object({
     name: z.string(),
@@ -66,9 +68,9 @@ const socialCollection = defineCollection({
 
 // 3. Export multiple collections to register them
 export const collections = {
-  blog: blogCollection,
-  doc: docCollection,
-  category: categoryCollection,
-  author: authorCollection,
-  social: socialCollection
+  news,
+  partner,
+  category,
+  author,
+  social
 }

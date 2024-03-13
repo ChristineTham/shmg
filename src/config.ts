@@ -1,16 +1,16 @@
 import type { CollectionEntry } from 'astro:content'
 
-export type Frontmatter = CollectionEntry<'blog'>['data']
+export type Frontmatter = CollectionEntry<'news'>['data']
 
 export interface TagType {
   tag: string
   count: number
-  pages: CollectionEntry<'blog'>[]
+  pages: CollectionEntry<'news'>[]
 }
 
 export const SiteMetadata = {
-  title: 'Hello Astro',
-  description: 'An Astro starter for corporate/marketing/blog websites.',
+  title: 'Sydney Hills Makan Group',
+  description: 'Indulge in the world of flavors with SHMG – where culinary delights meet community spirit! 🍲 "Makan" meaning "Eat" in Malaysian & Singaporean Malay and Indonesian language.',
   author: {
     name: 'Chris Tham',
     twitter: '@chris1tham',
@@ -26,29 +26,26 @@ export const SiteMetadata = {
     summary:
       'Hello Tham is a boutique management consulting firm. We specialise in Business and IT strategies, operating models, strategic roadmaps, enterprise architecture, analytics and business process design.'
   },
-  location: 'Rivendell, Middle Earth',
+  location: 'Sydney, NSW, Australia',
   latlng: [-33.86785, 151.20732] as [number, number],
-  repository: 'https://github.com/hellotham/hello-astro',
+  repository: 'https://github.com/ChristineTham/shmg',
   buildTime: new Date()
 }
 
-export { default as Logo } from './assets/svg/astro/astro-icon-dark.svg'
-export { default as LogoImage } from './assets/astro/astro-logo-dark.png'
-export { default as FeaturedSVG } from './assets/svg/undraw/undraw_design_inspiration.svg'
-export { default as DefaultSVG } from './assets/svg/undraw/undraw_my_feed.svg'
-export { default as DefaultImage } from './assets/undraw/undraw_my_feed.png'
+export { default as Logo } from './assets/images/logo.jpg'
+export { default as DefaultImage } from './assets/images/banner.jpg'
 
 export const NavigationLinks = [
   { name: 'Home', href: '' },
   { name: 'About', href: 'about' },
   { name: 'Contact', href: 'contact' },
-  { name: 'Blog', href: 'blog' },
-  { name: 'Docs', href: 'doc/introduction' }
+  { name: 'News', href: 'news' },
+  { name: 'Partners', href: 'partners' }
 ]
 
 export const PAGE_SIZE = 6
 
-export const GITHUB_EDIT_URL = `https://github.com/hellotham/hello-astro`
+export const GITHUB_EDIT_URL = `https://github.com/ChristineTham/shmg`
 
 export const COMMUNITY_INVITE_URL = `https://astro.build/chat`
 

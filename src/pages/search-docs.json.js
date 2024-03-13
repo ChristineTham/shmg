@@ -1,10 +1,7 @@
 import { getCollection } from 'astro:content'
 import { SiteMetadata } from '../config'
 
-const docs = await getCollection('doc', (p) => {
-  return !p.data.draft
-})
-const posts = await getCollection('blog', (p) => {
+const posts = await getCollection('news', (p) => {
   return !p.data.draft
 })
 const documents = posts
@@ -17,17 +14,6 @@ const documents = posts
     categories: post.data.categories,
     tags: post.data.tags
   }))
-  .concat(
-    docs.map((doc) => ({
-      url: import.meta.env.BASE_URL + 'doc/' + doc.slug,
-      title: doc.data.title,
-      description: doc.data.description,
-      author: SiteMetadata.author.name,
-      publishDate: SiteMetadata.buildTime,
-      categories: 'documentation',
-      tags: ['documentation']
-    }))
-  )
 
 export async function GET() {
   return new Response(JSON.stringify(documents), {

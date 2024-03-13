@@ -12,7 +12,7 @@ import coverSVG from '../../../assets/svg/undraw/undraw_add_notes.svg'
 import socialImage from '../../../assets/undraw/undraw_add_notes.png'
 
 export interface Props {
-  page: Page<CollectionEntry<'blog'>>
+  page: Page<CollectionEntry<'news'>>
 }
 
 const { tag } = Astro.params
@@ -33,7 +33,7 @@ const frontmatter: Frontmatter = {
 const currentPage = Astro.url.pathname.replace(/(\/\d*)?\/$/, '')
 
 export async function getStaticPaths({ paginate }: { paginate: PaginateFunction }) {
-  const allPosts = await getCollection('blog', ({ data }) => {
+  const allPosts = await getCollection('news', ({ data }) => {
     return data.draft !== true
   })
   const posts = allPosts.sort((a, b) => +b.data.publishDate - +a.data.publishDate)

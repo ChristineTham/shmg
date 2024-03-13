@@ -13,7 +13,7 @@ import coverSVG from '../../../assets/svg/undraw/undraw_short_bio.svg'
 import socialImage from '../../../assets/undraw/undraw_short_bio.png'
 
 export interface Props {
-  page: Page<CollectionEntry<'blog'>>
+  page: Page<CollectionEntry<'news'>>
 }
 
 const { author } = Astro.params
@@ -45,7 +45,7 @@ const currentPage = Astro.url.pathname.replace(/(\/\d*)?\/$/, '')
 
 export async function getStaticPaths({ paginate }: { paginate: PaginateFunction }) {
   const authors = await getCollection('author')
-  const allPosts = await getCollection('blog', (post) => !post.data.draft)
+  const allPosts = await getCollection('news', (post) => !post.data.draft)
   const posts = allPosts.sort((a, b) => +b.data.publishDate - +a.data.publishDate)
 
   return authors.flatMap((author) => {

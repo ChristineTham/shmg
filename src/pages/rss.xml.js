@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content'
 import { SiteMetadata } from '../config'
 
 export async function GET() {
-  const posts = await getCollection('blog', ({ data }) => {
+  const posts = await getCollection('news', ({ data }) => {
     return data.draft !== true
   })
   return rss({
@@ -18,7 +18,7 @@ export async function GET() {
     // simple example: generate items for every md file in /src/pages
     // see "Generating items" section for required data and advanced use cases
     items: posts.map((post) => ({
-      link: import.meta.env.BASE_URL + '/blog/' + post.slug,
+      link: import.meta.env.BASE_URL + '/news/' + post.slug,
       title: post.data.title,
       description: post.data.description,
       pubDate: post.data.publishDate.toString()

@@ -34,7 +34,7 @@ const currentPage = Astro.url.pathname.replace(/(\/\d*)?\/$/, '')
 
 export async function getStaticPaths({ paginate }: { paginate: PaginateFunction }) {
   const categories = await getCollection('category')
-  const allPosts = await getCollection('blog', (post) => !post.data.draft)
+  const allPosts = await getCollection('news', (post) => !post.data.draft)
   const posts = allPosts.sort((a, b) => +b.data.publishDate - +a.data.publishDate)
 
   return categories.flatMap((category) => {

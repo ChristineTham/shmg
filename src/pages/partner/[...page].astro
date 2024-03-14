@@ -52,7 +52,7 @@ export async function getStaticPaths({ paginate }: { paginate: PaginateFunction 
       {page.data.map(partner => (
         <div class="group relative">
           <div class="w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75">
-            <Image src={partner.data.image} alt={partner.data.title} class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+            <Image src={partner.data.image!} alt={partner.data.title} class="h-full w-full object-cover object-center lg:h-full lg:w-full" />
           </div>
           <div class="mt-4 flex justify-between">
             <div>

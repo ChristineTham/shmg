@@ -3,8 +3,8 @@ import type { CollectionEntry } from 'astro:content'
 
 export interface Props {
   base: string
-  prev: CollectionEntry<'news'> | CollectionEntry<'doc'> | undefined
-  next: CollectionEntry<'news'> | CollectionEntry<'doc'> | undefined
+  prev?: CollectionEntry<'news'> | CollectionEntry<'partner'>
+  next?: CollectionEntry<'news'> | CollectionEntry<'partner'>
 }
 
 const { base, prev, next } = Astro.props

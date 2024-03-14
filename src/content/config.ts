@@ -4,6 +4,7 @@ import { z, defineCollection, reference } from 'astro:content'
 const partner = defineCollection({
   schema: ({ image }) =>
     z.object({
+      draft: z.boolean().optional(),
       title: z.string(),
       description: z.string().optional(),
       cuisine: z.string().optional(),

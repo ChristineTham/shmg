@@ -31,7 +31,7 @@ const { frontmatter } = Astro.props
     <link rel='alternate' type='application/rss+xml' title='RSS' href={`${Astro.site}rss.xml`} />
     <meta name='generator' content={Astro.generator} />
     <SEO frontmatter={frontmatter} />
-    <!-- <ViewTransitions /> -->
+    <ViewTransitions />
     <script is:inline>
       const setDarkMode = () => {
         if (

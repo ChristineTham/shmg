@@ -18,7 +18,7 @@ const { partner, prev, next } = Astro.props
 
 const frontmatter: Frontmatter = {
   title: partner.data.title,
-  description: partner.data.description,
+  description: partner.data.description!,
   coverImage: partner.data.image,
   publishDate: SiteMetadata.buildTime
 }
@@ -35,7 +35,7 @@ const frontmatter: Frontmatter = {
           class='mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 px-4 py-8 sm:px-6 lg:max-w-7xl lg:grid-cols-2 lg:px-8'
         >
           <div>
-            <Image src={partner.data.image} alt={partner.data.title} class="w-full" />
+            <Image src={partner.data.image!} alt={partner.data.title} class="w-full" />
             <h2 class='text-3xl font-bold tracking-tight text-gray-900 sm:text-3xl'>
               {partner.data.title}
             </h2>

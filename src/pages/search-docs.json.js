@@ -19,7 +19,7 @@ const documents = news.map((post) => ({
   title: partner.data.title,
   description: partner.data.description,
   categories: partner.data.categories,
-  partner: post.data.tags
+  partner: partner.data.tags
 })))
 
 export async function GET() {

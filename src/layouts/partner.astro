@@ -4,7 +4,7 @@ import { SiteMetadata } from '../config'
 import type { CollectionEntry } from 'astro:content'
 import { Image } from 'astro:assets'
 import Base from './base.astro'
-import BlogHero from '../components/bloghero.astro'
+import PartnerHero from '../components/partnerhero.astro'
 import NextPrev from '../components/nextprev.astro'
 import GMap from '../components/gmap.astro'
 
@@ -28,7 +28,7 @@ const frontmatter: Frontmatter = {
   <main class='dark:bg-black'>
     <article class='post'>
       <header>
-        <BlogHero frontmatter={frontmatter} />
+        <PartnerHero frontmatter={frontmatter} />
       </header>
       <section class='bg-white'>
         <div

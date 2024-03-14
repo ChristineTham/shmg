@@ -2,6 +2,8 @@
 title: Authentic KL Flavors
 description: Malaysian Halal Cuisine
 cuisine: Malaysian
+country: Australia
+region: NSW
 halal: true
 image: ../../assets/images/authklflavors.jpg
 discount_pct: 10

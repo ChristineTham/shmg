@@ -33,8 +33,8 @@ export const SiteMetadata = {
   buildTime: new Date()
 }
 
-export { default as Logo } from './assets/images/logo.jpg'
-export { default as DefaultImage } from './assets/images/banner.jpg'
+export { default as Logo } from './assets/site/logo.jpg'
+export { default as DefaultImage } from './assets/site/banner.jpg'
 
 export const NavigationLinks = [
   { name: 'Home', href: '' },

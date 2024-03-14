@@ -8,6 +8,8 @@ const partner = defineCollection({
       title: z.string(),
       description: z.string().optional(),
       cuisine: z.string().optional(),
+      country: z.string().optional(),
+      region: z.string().optional(),
       image: image().optional(),
       categories: z.array(reference('category')).optional(),
       tags: z.array(z.string()).optional(),

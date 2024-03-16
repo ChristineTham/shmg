@@ -11,8 +11,8 @@ import remarkPlantUML from '@akebifiky/remark-simple-plantuml';
 import { remarkReadingTime } from './remark-plugins/remark-reading-time.mjs';
 import { remarkDiagram } from './remark-plugins/remark-diagram.mjs';
 import icon from "astro-icon";
-
 import markdoc from "@astrojs/markdoc";
+import preact from "@astrojs/preact";
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,7 +23,7 @@ export default defineConfig({
     }
   },
   site: 'https://shmg.netlify.app',
-  integrations: [icon(), tailwind(), sitemap(), mdx(), alpinejs(), robotsTxt(), markdoc()],
+  integrations: [icon(), tailwind(), sitemap(), mdx(), alpinejs(), robotsTxt(), markdoc(), preact()],
   markdown: {
     extendDefaultPlugins: true,
     remarkPlugins: [remarkReadingTime, remarkMath, remarkPlantUML, remarkDiagram, remarkEmoji],
@@ -33,7 +33,7 @@ export default defineConfig({
       langs: [],
       // Enable word wrap to prevent horizontal scrolling
       wrap: true
-    },
+    }
   },
-  scopedStyleStrategy: "where",
+  scopedStyleStrategy: "where"
 });

@@ -1,8 +1,8 @@
 ---
 import { getEntry } from 'astro:content'
 import { Image } from 'astro:assets'
-import { Icon } from 'astro-icon/components'
-import { Frontmatter } from '../config'
+// import { Icon } from 'astro-icon/components'
+import type { Frontmatter } from '../config'
 import Categories from '../components/categories.astro'
 import Tags from '../components/tags.astro'
 
@@ -22,10 +22,10 @@ const image =
   (frontmatter.images && frontmatter.images[0]) ||
   frontmatter.socialImage ||
   cat.data.coverSVG
-let author = await getEntry('author', 'default')
-if (frontmatter.author) {
-  author = await getEntry(frontmatter.author)
-}
+// let author = await getEntry('author', 'default')
+// if (frontmatter.author) {
+//   author = await getEntry(frontmatter.author)
+// }
 ---
 
 <div class='relative mx-auto my-4 h-64 w-full max-w-screen-xl md:mb-0'>

@@ -11,7 +11,8 @@ import CTAImage from '../assets/site/cta.jpg'
 
 const frontmatter = {
   title: '🍜 Join Sydney Hills Makan (Foodie) Group 🌏',
-  description: 'You do not have to leave in the Hills to join. It is open to everyone, and everyone is most welcome.',
+  description:
+    'You do not have to leave in the Hills to join. It is open to everyone, and everyone is most welcome.',
   coverImage: DefaultImage,
   publishDate: SiteMetadata.buildTime
 }
@@ -34,7 +35,7 @@ const social = await getCollection('social')
           <div class='block w-full shrink-0 grow-0 basis-auto lg:flex lg:w-6/12 xl:w-4/12'>
             <div class='w-full'>
               <!-- <Map loc={SiteMetadata.latlng} zoom={11} /> -->
-              <Image src={CTAImage} alt="scan QR" />
+              <Image src={CTAImage} alt='scan QR' />
             </div>
           </div>
           <div class='w-full shrink-0 grow-0 basis-auto lg:w-6/12 xl:w-8/12'>

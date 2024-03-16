@@ -1,10 +1,13 @@
 ---
 title: Authentic KL Flavors
 description: Malaysian Halal Cuisine
-cuisine: Malaysian
-country: Australia
-region: NSW
-halal: true
+cuisine:
+  - Malaysian
+  - halal
+categories:
+  - Australia
+  - NSW
+  - restaurant
 image: ../../assets/images/authklflavors.jpg
 discount_pct: 10
 discount_text: Purchase over $30 and lunch hours 11am to 3.30pm on weekdays only

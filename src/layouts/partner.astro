@@ -35,30 +35,42 @@ const frontmatter: Frontmatter = {
           class='mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 px-4 py-8 sm:px-6 lg:max-w-7xl lg:grid-cols-2 lg:px-8'
         >
           <div>
-            <Image src={partner.data.image!} alt={partner.data.title} class="w-full" />
-            <h2 class='text-3xl font-bold tracking-tight text-gray-900 sm:text-3xl'>
+            <Image src={partner.data.image!} alt={partner.data.title} class='w-full rounded-lg' />
+            <!-- <h2 class='text-3xl font-bold tracking-tight text-gray-900 sm:text-3xl'>
               {partner.data.title}
             </h2>
-            <p class='text-gray-500'>{partner.data.description}</p>
-            
-            <dl
-            class='mt-4 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8'
-            >
-            <div class='border-t border-gray-200 pt-4'>
-              <dt class='font-medium text-gray-900'>Cuisine</dt>
-              <dd class='mt-2 text-sm text-gray-500'>{partner.data.cuisine}</dd>
-            </div>
-            <div class='border-t border-gray-200 pt-4'>
-              <dt class='font-medium text-gray-900'>{partner.data.discount_pct}% Discount</dt>
-              <dd class='mt-2 text-sm text-gray-500'>
-                {partner.data.discount_text}
-              </dd>
-            </div>
-          </dl>
+            <p class='text-gray-500'>{partner.data.description}</p> -->
+
+            <dl class='mt-4 grid grid-cols-1 gap-x-6 gap-y-2 sm:grid-cols-2 sm:gap-y-4 lg:gap-x-4'>
+              <div class='border-t border-gray-200 pt-2'>
+                <dt class='font-medium text-gray-900'>Cuisine</dt>
+                <dd class='mt-2 text-sm text-gray-500'>
+                  {partner.data.cuisine && partner.data.cuisine.join(', ')}
+                </dd>
+              </div>
+              <div class='border-t border-gray-200 pt-2'>
+                <dt class='font-medium text-gray-900'>Categories</dt>
+                <dd class='mt-2 text-sm text-gray-500'>
+                  {partner.data.categories && partner.data.categories.join(', ')}
+                </dd>
+              </div>
+              <div class='border-t border-gray-200 pt-2'>
+                <dt class='font-medium text-gray-900'>{partner.data.discount_pct}% Discount</dt>
+                <dd class='mt-2 text-sm text-gray-500'>
+                  {partner.data.discount_text}
+                </dd>
+              </div>
+              <div class='border-t border-gray-200 pt-2'>
+                <dt class='font-medium text-gray-900'>Description</dt>
+                <dd class='mt-2 text-sm text-gray-500'>{partner.data.description}</dd>
+              </div>
+            </dl>
           </div>
           <div>
             <GMap search={partner.data.title} />
-            <div class="mt-4 prose prose-orange mx-auto max-w-screen-lg dark:prose-invert text-gray-500" >
+            <div
+              class='prose prose-orange mx-auto mt-4 max-w-screen-lg text-gray-500 dark:prose-invert'
+            >
               <slot />
             </div>
           </div>

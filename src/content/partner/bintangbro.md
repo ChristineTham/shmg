@@ -1,10 +1,13 @@
 ---
 title: Bintang Bro Restaurant
 description: Indonesian Fusion
-cuisine: Indonesian
-country: Australia
-region: NSW
-halal: true
+cuisine:
+  - Indonesian
+  - halal
+categories:
+  - Australia
+  - NSW
+  - restaurant
 image: ../../assets/images/bintangbro.png
 discount_pct: 10
 discount_text: excluding promotions and Liven payment
